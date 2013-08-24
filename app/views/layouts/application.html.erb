@@ -2,32 +2,35 @@
 <html>
 <head>
   <title>Blog</title>
-  <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="brand" href="/">The Rails Girls Blog</a>
-      <ul class="nav">
-        <li class="active"><a href="/posts">Posts</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-
-<div class="container">
-  <%= yield %>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">	
+	  <div class="navbar-header">
+	  	<a class="navbar-brand" href="#">The Rails Girls Blog</a>
+	  </div>	
+	  <div class="collapse navbar-collapse">
+	  	<a href="#" class="navbar-text">Posts</a>
+	  
+	  	<%= link_to 'New Post', new_post_path, :class => "navbar-text pull-right"%>		
+	  </div>	
+  </div>	  
+</div> 
+  
+<div class="main-wrapper">
+	<div class="main-container container">
+	  <%= yield %>
+	</div>
 </div>
 
 <footer>
   <div class="container">
-    Rails Girls 2013
+    <span>Rails Girls 2013<span>
   </div>
 </footer>
 
